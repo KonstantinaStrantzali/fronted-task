@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
 import classes from './AvailiableDrinks.module.css'
+import Card from '../UI/Card';
+import DrinkItem from '../DrinkItem/DrinkItem';
 
 const DUMMY_DRINKS = [
     {
@@ -30,10 +32,13 @@ const DUMMY_DRINKS = [
   ];
 
 function AvailiableDrinks() {
-    const drinksList = DUMMY_DRINKS.map(drink => <li>{drink.name}</li>)
+    const drinksList = DUMMY_DRINKS.map((drink) => (<DrinkItem key = {drink.id} name = {drink.name} 
+      description ={drink.description} price ={drink.price}/>));
   return (
     <section className={classes.drinks}>
+      <Card>
         <ul>{drinksList}</ul>
+      </Card>
     </section>
   )
 }
