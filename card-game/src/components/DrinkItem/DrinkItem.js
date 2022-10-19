@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from './DrinkItem.module.css'
+import DrinkItemForm from './DrinkItemForm'
 
 
 
@@ -13,6 +14,9 @@ function DrinkItem(props) {
         <h3>{props.name}</h3>
         <div className={classes.description}>{props.description}</div>
         <div className={classes.drink}>{price}</div>
+    </div>
+    <div>
+      <DrinkItemForm/>
     </div>
  </li>
   )
