@@ -32,7 +32,7 @@ const DUMMY_DRINKS = [
   ];
 
 function AvailiableDrinks() {
-    const drinksList = DUMMY_DRINKS.map((drink) => (<DrinkItem key = {drink.id} name = {drink.name} 
+    const drinksList = DUMMY_DRINKS.map((drink) => (<DrinkItem id = {drink.id} key = {drink.id} name = {drink.name} 
       description ={drink.description} price ={drink.price}/>));
   return (
     <section className={classes.drinks}>

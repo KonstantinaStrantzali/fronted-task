@@ -3,11 +3,11 @@ import classes from './DrinkItemForm.module.css'
 import Input from '../UI/Input'
 
 
-function DrinkItemForm() {
+function DrinkItemForm(props) {
   return (
     <form className={classes.form}>
         <Input label ="Amount" input = {{
-            id : 'Amount',
+            id : props.id,
             type : 'Number',
             min : '1',
             max : '5',

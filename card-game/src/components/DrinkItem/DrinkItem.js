@@ -16,7 +16,7 @@ function DrinkItem(props) {
         <div className={classes.drink}>{price}</div>
     </div>
     <div>
-      <DrinkItemForm/>
+      <DrinkItemForm id = {props.id}/>
     </div>
  </li>
   )
