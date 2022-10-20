@@ -1,8 +1,9 @@
-import React, {Fragment, useState} from 'react';
+import { useState} from 'react';
 import './App.css';
 import Drinks from './components/Drinks/Drinks'
 import Cart from './components/Cart/Cart';
 import Header from './components/Layout/Header';
+import CartProvider from './store/CartProvider';
 
 
 function App() {
@@ -16,13 +17,13 @@ function App() {
     setCartIsShown(false)
   }
   return (
-    <Fragment>
+    <CartProvider>
       {cartIsShown && <Cart onHide ={hideCartHandler}/>} {/*if cartIsShown is truthy show the cart */}
       <Header onShow = {showCartHandler}/>{/*passing prop onShow points at showCartHandler */}
       <main>
         <Drinks/>
       </main>
-    </Fragment>
+    </CartProvider>
   );
 }
 
