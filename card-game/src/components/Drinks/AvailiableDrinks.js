@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react';
 import classes from './AvailiableDrinks.module.css'
 import Card from '../UI/Card';
 import DrinkItem from '../DrinkItem/DrinkItem';
