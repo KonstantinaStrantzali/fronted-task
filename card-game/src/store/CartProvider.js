@@ -2,6 +2,7 @@ import React from 'react'
 import CartContext from './cart-context'
 import {useReducer} from 'react'
 
+{/*manage the context data and provide the context to all the components want access */}
 const defaultCartState = {
   items : [],
   totalAmount : 0
@@ -18,7 +19,7 @@ const cartReducer = (state, action) => {
   }
   return defaultCartState
 }
-function CartProvider({children}) {
+const CartProvider = (props) => {
 
  const [cartState, dispatchCartAction] = useReducer(cartReducer, defaultCartState)
 
@@ -34,13 +35,11 @@ const removeItem = (id) => {
     totalAmount: cartState.totalAmount,
     addItem: addItemToCart,
     removeItem: removeItem,
-      }
-  
-
-    
+      }  
 
   return (
-    <CartContext.Provider value={cartContext}>{children}
+    <CartContext.Provider value={cartContext}>
+      {props.children}
     </CartContext.Provider>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import classes from './DrinkItem.module.css'
 import DrinkItemForm from './DrinkItemForm'
 import CartContext from '../../store/cart-context';
@@ -17,7 +17,7 @@ function DrinkItem(props) {
       name: props.name,
       amount : amount,
       price: props.price,
-    })
+    });
 
   }
 

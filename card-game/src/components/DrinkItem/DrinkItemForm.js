@@ -10,7 +10,7 @@ function DrinkItemForm(props) {
   const amountInputRef = useRef()
 
   const handleFormSubmit = (event) => {  {/* event obj sent as argument when function called */}
-event.preventDefault();
+  event.preventDefault();
 
   const enteredAmount = amountInputRef.current.value;
   const enteredAmountNum = +enteredAmount;
@@ -24,8 +24,9 @@ event.preventDefault();
 }
   return (
     <form className={classes.form} onSubmit = {handleFormSubmit}>
-        <Input label ="Amount" input = {{
-            ref : {amountInputRef},
+        <Input 
+        label ="Amount" ref = {amountInputRef} input = {{
+            
             id : props.id,
             type : 'Number',
             min : '1',
@@ -33,7 +34,8 @@ event.preventDefault();
             step : '1',
             defaultValue: '1',
         }}/>
-        <button> {!amountIsValid && <p>Please enter a valid amount</p>} + Add</button>
+        <button>  + Add</button>
+        {!amountIsValid && <p>Please enter a valid amount</p>}
     </form>
   )
 }
